@@ -1,0 +1,46 @@
+===========
+IdleStarter
+===========
+
+For Windows. Have your computer start up a program if it has been idle for a
+while. Perhaps start up a node for your render farm.
+
+IdleStarter [-help] [-run "<command>"] [-wait <minutes>] [-cpu <percent>]
+            [-memory <percent>]
+where:
+	-help = Shows usage
+	-run "<command>" = Command to run
+	-wait <minutes> = Waits minutes before starting (default 1)
+	-cpu <percent> = Run only if cpu utilization is less than this (default is 100)
+    -memory <percent>  = Run only if memory utilization is less than this
+            (default is 100)
+
+====================
+Implementation notes
+====================
+This program hooks into the windows keyboard and mouse to determine if the
+computer has been idle. A timer periodically checks for the idleness.
+
+Once the program that is supposed to be started gets started, IdleStarter
+will monitor to ensure that it is still running.
+
+There is also a check for CPU and memory level conditions that must be met
+before the program is started.
+
+=======
+License
+=======
+BSD. See source for full text.
+
+=================
+About IdleStarter
+=================
+My bro-in-law Paul Covello needed this for something at the office. Thus
+IdleStarter was born.
+
+=================
+About Alfred Pang
+=================
+Win32 makes me feel nostalgic.
+
+
